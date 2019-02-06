@@ -62,5 +62,6 @@ const masses = [{
 
 const scale = 70
 const radius = 4
+const trailLength = 35
 
-export { g, dt, softeningConstant, masses, scale, radius }
+export { g, dt, softeningConstant, masses, scale, radius, trailLength }
