@@ -2,9 +2,9 @@
  * Inputs for our NBodyProblem
  */
 
-const g = 39.5;
-const dt = 0.008; //0.005 years is equal to 1.825 days
-const softeningConstant = 0.15;
+const g = 39.5
+const dt = 0.008 //0.005 years is equal to 1.825 days
+const softeningConstant = 0.15
 
 const masses = [{
   name: "Sun", //We use solar masses as the unit of mass, so the mass of the Sun is exactly 1
@@ -56,6 +56,11 @@ const masses = [{
     vy: -1.5065904473191791,
     vz: -0.1524041758922603
   }
-];
+]
 
-export { g, dt, softeningConstant, masses }
+// Animation constants
+
+const scale = 70
+const radius = 4
+
+export { g, dt, softeningConstant, masses, scale, radius }
