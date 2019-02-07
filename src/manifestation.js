@@ -45,7 +45,7 @@ class Manifestation {
         0,
         2 * Math.PI
       );
-      this.ctx.fillStyle = `rgb(0, 12, 153, ${transparency})`;
+      this.ctx.fillStyle = `rgb(255, 255, 255, ${transparency})`;
 
       this.ctx.fill();
     }

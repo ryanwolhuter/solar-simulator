@@ -83,7 +83,13 @@ class SimulationContainer extends Component {
       if (y < radius || y > height - radius) massI.vy = -massI.vy
     }
 
-    const { dragging, mousePressX, mousePressY, currentMouseX, currentMouseY } = this.state
+    const {
+      dragging,
+      mousePressX,
+      mousePressY,
+      currentMouseX,
+      currentMouseY
+    } = this.state
 
     if (dragging) {
       ctx.beginPath()
@@ -134,7 +140,8 @@ class SimulationContainer extends Component {
     canvas.addEventListener(
       'mouseup',
       e => {
-        const {mousePressX, mousePressY} = this.state
+        const { mousePressX, mousePressY } = this.state
+
         const x = (mousePressX - width / 2) / scale
         const y = (mousePressY - height / 2) / scale
         const z = 0
@@ -168,7 +175,7 @@ class SimulationContainer extends Component {
     return (
       <>
         <Controls handleReset={this.handleReset}/>
-        <canvas ref={this.canvasRef}/>
+        <canvas ref={this.canvasRef} id='canvas'/>
       </>
     )
   }
