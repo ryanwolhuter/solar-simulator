@@ -8,11 +8,22 @@
   z-index: 2;
   top: 0;
   width: 100%;
-  padding: 10px;
+  padding: 20px;
   color: white;
 }
-#controls-wrapper > select, button {
-  background-color: #000;
-  color: #fff;
-  border: 1px solid #545454;
+
+#controls-wrapper select {
+  margin: 0 10px 0 10px;
+  background-color: transparent;
+  border-color: transparent;
+  color: white;
+}
+
+#controls-wrapper button {
+  height: 50px;
+  width: 50px;
+  color: white;
+  background-color: transparent;
+  border-color: white;
+  border-radius: 50%;
 }
