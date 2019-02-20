@@ -41,7 +41,8 @@ class SimulationContainer extends Component {
         (mass['manifestation'] = new Manifestation(
           ctx,
           trailLength,
-          radius
+          radius,
+          mass.hsl
         )
       )
     )
@@ -95,7 +96,7 @@ class SimulationContainer extends Component {
       ctx.beginPath()
       ctx.moveTo(mousePressX, mousePressY)
       ctx.lineTo(currentMouseX, currentMouseY)
-      ctx.strokeStyle = 'red'
+      ctx.strokeStyle = 'white'
       ctx.stroke()
     }
 

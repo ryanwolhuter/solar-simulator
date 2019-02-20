@@ -1,10 +1,12 @@
 class Manifestation {
-  constructor(ctx, trailLength, radius) {
+  constructor(ctx, trailLength, radius, hsl) {
     this.ctx = ctx;
 
     this.trailLength = trailLength;
 
     this.radius = radius;
+
+    this.hsl = hsl
 
     this.positions = [];
   }
@@ -45,7 +47,7 @@ class Manifestation {
         0,
         2 * Math.PI
       );
-      this.ctx.fillStyle = `rgb(255, 255, 255, ${transparency})`;
+      this.ctx.fillStyle = `hsla(${this.hsl}, ${transparency})`;
 
       this.ctx.fill();
     }
