@@ -16,7 +16,7 @@ const masses = [{
   vx: 3.1669325898331e-5,
   vy: -6.85489559263319e-6,
   vz: -7.90076642683254e-7,
-  hsl: '60, 80%, 65%'
+  hsl: '60, 100%, 85%'
 },
   {
     name: 'Mercury',
@@ -68,9 +68,38 @@ const masses = [{
   }
 ]
 
+const massesToAdd = {
+  earth: {
+    mass: 0.000003003,
+    radius: 10,
+    hsl: '212, 44%, 63%'
+  },
+  jupiter: {
+    mass: 0.0009543,
+    radius: 13,
+    hsl: '60, 93%, 94%'
+  },
+  redDwarf: {
+    mass: 0.1,
+    radius: 18,
+    hsl: '9, 70%, 30%'
+  },
+  sun: {
+    mass: 1,
+    radius: 30,
+    hsl: '60, 100%, 85%'
+
+  },
+  cygnus: {
+    mass: 14.8,
+    radius: 100,
+    hsl: '0, 0%, 0%'
+  }
+}
+
 // Animation constants
 
 const scale = 170
 const trailLength = 35
 
-export { g, dt, softeningConstant, masses, scale, trailLength }
+export { g, dt, softeningConstant, masses, massesToAdd, scale, trailLength }

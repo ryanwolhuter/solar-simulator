@@ -8,38 +8,12 @@ import {
   dt,
   softeningConstant,
   masses,
+  massesToAdd,
   scale,
   trailLength
 } from '../constants'
 
-const massesToAdd = {
-  earth: {
-    mass: 0.000003003,
-    radius: 10,
-    hsl: '212, 44%, 63%'
-  },
-  jupiter: {
-    mass: 0.0009543,
-    radius: 13,
-    hsl: '60, 93%, 94%'
-  },
-  redDwarf: {
-    mass: 0.1,
-    radius: 18,
-    hsl: '9, 70%, 30%'
-  },
-  sun: {
-    mass: 1,
-    radius: 30,
-    hsl: '60, 80%, 65%'
-
-  },
-  cygnus: {
-    mass: 14.8,
-    radius: 100,
-    hsl: '0, 0%, 0%'
-  }
-}
+/* The whole simulation is an instance of the nBodyProblem class */
 
 const innerSolarSystem = new nBodyProblem({
   g,
@@ -47,6 +21,8 @@ const innerSolarSystem = new nBodyProblem({
   masses: JSON.parse(JSON.stringify(masses)),
   softeningConstant
 })
+
+/* Container component that holds animation and interaction logic */
 
 class SimulationContainer extends Component {
 
@@ -59,6 +35,8 @@ class SimulationContainer extends Component {
   }
 
   canvasRef = createRef()
+
+  // Each celestial body is represented on the screen as a Manifestation
 
   populateManifestations = masses => {
     const canvas = this.canvasRef.current

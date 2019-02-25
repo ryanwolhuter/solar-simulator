@@ -1,5 +1,7 @@
 import React from 'react'
 
+/* Renders the controls for the simulation */
+
 const Controls = ({ handleReset }) => (
   <section id='controls-wrapper'>
     <label>Add another celestial body:</label>

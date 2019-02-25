@@ -9,9 +9,13 @@ class Manifestation {
     this.positions = []
   }
 
+  // store the previous positions to draw the motion trails
+
   storePosition(x, y) {
     this.positions.push({ x, y })
 
+    // Remove position from memory when it's no longer needed to draw the trail
+    
     if (this.positions.length > this.trailLength) this.positions.shift()
   }
 
