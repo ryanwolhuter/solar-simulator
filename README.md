@@ -14,4 +14,4 @@ You can either click anywhere on the screen to add it at a zero initial velocity
 
 I improved on the original tutorial by giving each celestial body it's own unique radius and color. These are scaled according to NASA's data. The color choices also come from NASA.
 
-I also added my favorite celestial mass: [Cygnus X1](https://en.wikipedia.org/wiki/Cygnus_X-1)
+I also added my favorite black hole: [Cygnus X1](https://en.wikipedia.org/wiki/Cygnus_X-1)
