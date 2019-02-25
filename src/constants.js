@@ -8,6 +8,7 @@ const softeningConstant = 0.15
 
 const masses = [{
   name: 'Sun', //We use solar masses as the unit of mass, so the mass of the Sun is exactly 1
+  radius: 30,
   m: 1,
   x: -1.50324727873647e-6,
   y: -3.93762725944737e-6,
@@ -19,6 +20,7 @@ const masses = [{
 },
   {
     name: 'Mercury',
+    radius: 7,
     m: 1.65956463e-7,
     x: -0.346390408691506,
     y: -0.272465544507684,
@@ -30,6 +32,7 @@ const masses = [{
   },
   {
     name: 'Venus',
+    radius: 10,
     m: 2.44699613e-6,
     x: -0.168003526072526,
     y: 0.698844725464528,
@@ -41,6 +44,7 @@ const masses = [{
   },
   {
     name: 'Earth',
+    radius: 10,
     m: 3.0024584e-6,
     x: 0.648778995445634,
     y: 0.747796691108466,
@@ -53,6 +57,7 @@ const masses = [{
   {
     m: 3.213e-7,
     name: 'Mars',
+    radius: 8,
     x: -0.574871406752105,
     y: -1.395455041953879,
     z: -0.01515164037265145,
@@ -66,7 +71,6 @@ const masses = [{
 // Animation constants
 
 const scale = 170
-const radius = 6
 const trailLength = 35
 
-export { g, dt, softeningConstant, masses, scale, radius, trailLength }
+export { g, dt, softeningConstant, masses, scale, trailLength }

@@ -2,7 +2,7 @@
  * Gravitational n-body algorithm
  */
 
-export default class NBodyProblem {
+export default class nBodyProblem {
   constructor(params) {
     this.g = params.g
     this.dt = params.dt

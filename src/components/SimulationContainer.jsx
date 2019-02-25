@@ -9,9 +9,37 @@ import {
   softeningConstant,
   masses,
   scale,
-  radius,
   trailLength
 } from '../constants'
+
+const massesToAdd = {
+  earth: {
+    mass: 0.000003003,
+    radius: 10,
+    hsl: '212, 44%, 63%'
+  },
+  jupiter: {
+    mass: 0.0009543,
+    radius: 13,
+    hsl: '60, 93%, 94%'
+  },
+  redDwarf: {
+    mass: 0.1,
+    radius: 18,
+    hsl: '9, 70%, 30%'
+  },
+  sun: {
+    mass: 1,
+    radius: 30,
+    hsl: '60, 80%, 65%'
+
+  },
+  cygnus: {
+    mass: 14.8,
+    radius: 100,
+    hsl: '0, 0%, 0%'
+  }
+}
 
 const innerSolarSystem = new nBodyProblem({
   g,
@@ -41,7 +69,7 @@ class SimulationContainer extends Component {
         (mass['manifestation'] = new Manifestation(
           ctx,
           trailLength,
-          radius,
+          mass.radius,
           mass.hsl
         )
       )
@@ -72,16 +100,6 @@ class SimulationContainer extends Component {
       const y = height / 2 + massI.y * scale
 
       massI.manifestation.draw(x, y)
-
-      if (massI.name) {
-        ctx.font = '14px Arial'
-        ctx.fillText(massI.name, x + 12, y + 4)
-        ctx.fill()
-      }
-
-      if (x < radius || x > width - radius) massI.vx = -massI.vx
-
-      if (y < radius || y > height - radius) massI.vy = -massI.vy
     }
 
     const {
@@ -143,6 +161,7 @@ class SimulationContainer extends Component {
       e => {
         const { mousePressX, mousePressY } = this.state
 
+        const mass = massesToAdd[massesList.value]
         const x = (mousePressX - width / 2) / scale
         const y = (mousePressY - height / 2) / scale
         const z = 0
@@ -150,16 +169,18 @@ class SimulationContainer extends Component {
         const vy = (e.clientY - mousePressY) / 35
         const vz = 0
 
-        innerSolarSystem.masses.push({
-          m: parseFloat(massesList.value),
+        const newMass = {
+          m: parseFloat(mass.mass),
           x,
           y,
           z,
           vx,
           vy,
           vz,
-          manifestation: new Manifestation(ctx, trailLength, radius)
-        })
+          manifestation: new Manifestation(ctx, trailLength, mass.radius, mass.hsl)
+        }
+
+        innerSolarSystem.masses.push(newMass)
         this.setState({ dragging: false })
       },
       false
